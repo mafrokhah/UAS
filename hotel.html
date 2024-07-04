@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indonesian Tourism</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #bdd64a;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2f4f4f;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 10px;
+        }
+        nav a {
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #d3c15e;
+        }
+        main {
+            padding: 20px;
+            text-align: center;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 0 auto;
+            max-width: 800px;
+        }
+        main h2 {
+            color: #2f4f4f;
+            margin-bottom: 15px;
+        }
+        main p {
+            color: #696969;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        main img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .hotel {
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            padding: 10px;
+            text-align: left;
+        }
+        .hotel h3 {
+            color: #2f4f4f;
+            margin-bottom: 10px;
+        }
+        .hotel p {
+            margin-bottom: 5px;
+        }
+        .hotel ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        .hotel img {
+            width: 100%; /* membuat gambar 100% lebar konten div */
+            height: auto; /* membuat gambar mengikuti aspek ratio */
+            max-width: 100%; /* membuat gambar tidak melebihi ukuran konten */
+            margin-top: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .hotel .details {
+            display: flex;
+            justify-content: space-between;
+        }
+        .hotel .details .description {
+            width: 60%;
+        }
+        .hotel .details .facilities {
+            width: 35%;
+        }
+        .hotel .price {
+            color: #2f4f4f;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Indonesian Tourism</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="culture.html">Culture</a>
+        <a href="destinasi.html">Destinations</a>
+        <a href="hotel.html">Hotels</a>
+        <a href="transactions.html">Transactions</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <main>
+        <h2>Welcome to Indonesian Tourism</h2>
+        <p>Explore the beauty and culture of Indonesia.</p>
+        <img src="hotel1.jpg" alt="Beautiful Indonesia">
+
+        <section>
+            <h2>Favorite Hotels in Indonesia</h2>
+
+            <div class="hotel">
+                <h3>Jakarta Hotel</h3>
+                <img src="hotel2.jpg" alt="Jakarta Hotel">
+                <div class="details">
+                    <div class="description">
+                        <p><strong>Location:</strong> Central Jakarta</p>
+                        <p><strong>Facilities:</strong></p>
+                        <ul>
+                            <li>Swimming pool</li>
+                            <li>Spa and wellness center</li>
+                            <li>Restaurant and bar</li>
+                            <li>Conference rooms</li>
+                            <li>Free Wi-Fi</li>
+                        </ul>
+                    </div>
+                    <div class="facilities">
+                        <p class="price">Price per night: $150</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotel">
+                <h3>Bali Beach Resort</h3>
+                <img src="hotel3.jpeg" alt="Bali Beach Resort">
+                <div class="details">
+                    <div class="description">
+                        <p><strong>Location:</strong> Kuta, Bali</p>
+                        <p><strong>Facilities:</strong></p>
+                        <ul>
+                            <li>Private beach access</li>
+                            <li>Multiple pools</li>
+                            <li>Kids club</li>
+                            <li>Fitness center</li>
+                            <li>Spacious suites and villas</li>
+                        </ul>
+                    </div>
+                    <div class="facilities">
+                        <p class="price">Price per night: $250</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hotel">
+                <h3>Yogyakarta Heritage Hotel</h3>
+                <img src="hotel4.jpeg" alt="Yogyakarta Heritage Hotel">
+                <div class="details">
+                    <div class="description">
+                        <p><strong>Location:</strong> Yogyakarta</p>
+                        <p><strong>Facilities:</strong></p>
+                        <ul>
+                            <li>Traditional Javanese spa</li>
+                            <li>Art gallery</li>
+                            <li>Rooftop restaurant</li>
+                            <li>Library and reading lounge</li>
+                            <li>Airport shuttle service</li>
+                        </ul>
+                    </div>
+                    <div class="facilities">
+                        <p class="price">Price per night: $180</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+</body>
+</html>

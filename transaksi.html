@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indonesian Tourism - Transactions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #bdd64a;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #2f4f4f;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        nav a:hover {
+            background-color: #d3c15e;
+            color: white;
+        }
+        main {
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 20px auto;
+            max-width: 800px;
+            border-radius: 8px;
+        }
+        main h2 {
+            color: #2f4f4f;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        form {
+            text-align: center;
+        }
+        button {
+            padding: 12px 20px;
+            background-color: #2f4f4f;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #d3c15e;
+        }
+        .transaction-details {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .success-message {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Indonesian Tourism</h1>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="culture.html">Culture</a>
+        <a href="destinasi.html">Destinations</a>
+        <a href="hotel.html">Hotels</a>
+        <a href="transaksi.html">Transactions</a>
+        <a href="about.html">About</a>
+        <a href="kontak.html">Contact</a>
+    </nav>
+    <main>
+        <h2>Explore and Book Your Adventure</h2>
+        
+        <table id="transactionTable">
+            <tr>
+                <th>Transaction Type</th>
+                <th>Payment Status</th>
+                <th>Date & Time</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td>Flight Ticket</td>
+                <td>Paid</td>
+                <td>15 July 2024, 09:00 AM</td>
+                <td><button onclick="viewDetails('Flight Ticket')">View Details</button></td>
+            </tr>
+            <tr>
+                <td>Hotel Booking</td>
+                <td>Pending</td>
+                <td>20 July 2024, 12:00 PM</td>
+                <td><button onclick="viewDetails('Hotel Booking')">View Details</button></td>
+            </tr>
+            <tr>
+                <td>Activity Tour</td>
+                <td>Not Paid</td>
+                <td>25 July 2024, 02:00 PM</td>
+                <td><button onclick="viewDetails('Activity Tour')">View Details</button></td>
+            </tr>
+            <!-- You can add more rows as needed -->
+        </table>
+        
+        <div id="transactionDetails" class="transaction-details" style="display: none;">
+            <!-- Details will be dynamically populated here -->
+        </div>
+        
+        <div id="successMessage" class="success-message">
+            ✓ Your transaction has been successfully processed!
+        </div>
+
+        <form id="submitForm" action="submit.php" method="POST" onsubmit="return false;">
+            <input type="hidden" id="selectedTransaction" name="selectedTransaction">
+            <button type="button" onclick="submitForm()">Complete Transaction</button>
+        </form>
+        
+    </main>
+
+    <script>
+        function viewDetails(transactionType) {
+            // Simulate fetching data and displaying it (you can customize this part)
+            alert('Fetching details for ' + transactionType);
+            // Set the selected transaction type to be submitted
+            document.getElementById('selectedTransaction').value = transactionType;
+            // Display transaction details (for demo purposes)
+            displayTransactionDetails(transactionType);
+        }
+
+        function displayTransactionDetails(transactionType) {
+            let details = "";
+            if (transactionType === 'Flight Ticket') {
+                details = "Total Price: $500<br>Departure: Jakarta, Arrival: Bali";
+            } else if (transactionType === 'Hotel Booking') {
+                details = "Total Price: $300<br>Hotel: Sheraton Jakarta";
+            } else if (transactionType === 'Activity Tour') {
+                details = "Total Price: $150<br>Activity: Snorkeling in Bali";
+            }
+            document.getElementById('transactionDetails').innerHTML = details;
+            document.getElementById('transactionDetails').style.display = 'block';
+        }
+
+        function submitForm() {
+            // Submit the form
+            document.getElementById('submitForm').submit();
+            // Display the success message
+            document.getElementById('successMessage').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
